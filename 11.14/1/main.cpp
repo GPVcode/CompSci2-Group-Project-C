@@ -28,19 +28,22 @@ void charCombinations(const string& num, string currentChars, int index) {
 
     // Digit at the current index
     int digit = num[index] - '0'; // char to integer conversion
+    // Letters for the current digit from phonepad vector
+    const string& letters = phonePad[digit];
 
     if (digit == 0 || digit == 1) {
         charCombinations(num, currentChars, index + 1);
         return;
+    } else{
+        // loop through letters
+        for (int i = 0; i < letters.length(); i++) {
+            charCombinations(num, currentChars + letters[i], index + 1);
+        }
     }
 
-    // Letters for the current digit from phonepad vector
-    const string& letters = phonePad[digit];
 
-    // loop through letters
-    for (int i = 0; i < letters.length(); i++) {
-        charCombinations(num, currentChars + letters[i], index + 1);
-    }
+
+    
 }
 
 int main() {

@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <sstream>
 
 using namespace std;
 
@@ -37,7 +36,8 @@ void charCombinations(const string& num, string currentChars, int index, vector<
         charCombinations(num, currentChars, index + 1, combinations);
     } else {
         // Recursively add each letter
-        for (char letter : letters) {
+        for (int i = 0; i < letters.size(); i++) {
+            char letter = letters[i];
             charCombinations(num, currentChars + letter, index + 1, combinations);
         }
     }
@@ -86,7 +86,7 @@ void generateWordSequences(const string& phoneNumber) {
         allCombinations.push_back(combinations);
     }
 
-    // Combine all parts into full word sequences
+    // Combine all parts into full word sequences. K will move first, and I will move last.
     for (int i = 0; i < allCombinations[0].size(); i++) {
         for (int j = 0; j < allCombinations[1].size(); j++) {
             for (int k = 0; k < allCombinations[2].size(); k++) {

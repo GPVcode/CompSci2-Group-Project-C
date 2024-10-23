@@ -3,5 +3,14 @@
         "activityBar.background": "#531147",
         "titleBar.activeBackground": "#741863",
         "titleBar.activeForeground": "#FEF8FC"
+    },
+    "files.associations": {
+        "*.json.liquid": "json",
+        "*.yaml.liquid": "yaml",
+        "*.md.liquid": "markdown",
+        "*.js.liquid": "liquid-javascript",
+        "*.css.liquid": "liquid-css",
+        "*.scss.liquid": "liquid-scss",
+        "ostream": "cpp"
     }
 }
